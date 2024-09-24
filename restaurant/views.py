@@ -11,3 +11,5 @@ def menu_list(request):
 def inventory(request):
     return render(request, 'inventory.html')
 
+def purchase(request):
+    return render(request, 'purchase.html')

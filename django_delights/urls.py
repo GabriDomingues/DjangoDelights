@@ -16,7 +16,7 @@ Including another URLconf
 """
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 from restaurant import views
 
@@ -25,4 +25,5 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('menu_list/', views.menu_list, name="menu_list"),
     path('inventory/', views.inventory, name="inventory"),
+    path('purchase/', views.purchase, name="purchase"),
 ] + debug_toolbar_urls()
