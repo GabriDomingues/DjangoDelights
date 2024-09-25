@@ -6,10 +6,10 @@ def home(request):
     return render(request, "restaurant/base.html")
 
 def menu_list(request):
-    return render(request, 'menu_list.html')
+    return render(request, 'restaurant/menu_list.html')
 
 def inventory(request):
-    return render(request, 'inventory.html')
+    return render(request, 'restaurant/inventory.html')
 
 def purchase(request):
-    return render(request, 'purchase.html')
+    return render(request, 'restaurant/purchase.html')
