@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Django Delights{% endblock %}</title>
+    <title>{% block title %}Home Page{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
@@ -16,6 +16,14 @@
                 <li><a href="{% url 'menu_list' %}">Menu</a></li>
                 <li><a href="{% url 'inventory' %}">Inventory</a></li>
                 <li><a href="{% url 'purchase' %}">Purchase</a></li>
+
+                <!-- Verifica se o usuário está autenticado -->
+
+                {% if user.is_autenticated %}
+                    <li><a href="{% url 'logout' %}"></a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}"></a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

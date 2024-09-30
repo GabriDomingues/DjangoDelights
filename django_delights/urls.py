@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path
 
 from restaurant import views
+from restaurant.views import CustomLoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('menu_list/', views.menu_list, name="menu_list"),
     path('inventory/', views.inventory, name="inventory"),
     path('purchase/', views.purchase, name="purchase"),
+    path('login/', CustomLoginView.as_view(), name='login'),
 ] + debug_toolbar_urls()

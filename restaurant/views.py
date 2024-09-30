@@ -1,5 +1,5 @@
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render
-from restaurant.models import MenuItem
 
 
 def home(request):
@@ -13,3 +13,6 @@ def inventory(request):
 
 def purchase(request):
     return render(request, 'restaurant/purchase.html')
+
+class CustomLoginView(LoginView):
+    template_name = 'login.html'
